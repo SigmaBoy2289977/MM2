@@ -527,23 +527,26 @@ end)
 local ValueJumpPower = 50
 local OldJumpPower = Game.Players.LocalPlayer.Character.Humanoid.JumpPower
 local Slider = PlayerTab:CreateSlider({
-   Name = "Player JumpPower",
+   Name = "JumpPower",
    Range = {0, 200},
    Increment = 1,
-   Suffix = "JumpPower",
+   Suffix = "JumpPowe1111",
    CurrentValue = 50,
-   Flag = "JumpSlider11", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "JumpPowe111", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-CurrentValue = Value
+        CurrentValue = Value
 ValueJumpPower = Value
 end,  ValueJumpPower = CurrentValue,
+}) 
+   end,
 })
+
 local Toggle = PlayerTab:CreateToggle({
-   Name = "Active Modifying JumpPower",
+   Name = "JumpPower",
    CurrentValue = false,
-   Flag = "ButtonJump11", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "JumpPower1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-  ActiveJumpPower = Value task.spawn(function()
+        ActiveJumpPower = Value task.spawn(function()
 while ActiveJumpPower do
 Game.Players.LocalPlayer.Character.Humanoid.JumpPower = ValueJumpPower
 task.wait(0.1)
@@ -551,4 +554,6 @@ end
 Game.Players.LocalPlayer.Character.Humanoid.JumpPower = OldJumpPower
 end)
 end,
+})
+   end,
 })
