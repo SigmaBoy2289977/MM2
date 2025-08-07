@@ -137,17 +137,18 @@ RolesTab:CreateButton({
     end,
 })
 
-local DisocrdLink = InfoTab:CreateButton({
-   Name = "Discord Link",
+local Button = InfoTab:CreateButton({
+   Name = "Copy DIscord",
    Callback = function()
-        copyToClipboard("https://discord.gg/7WtejdcD")
+        setclipboard("https://discord.gg/7WtejdcD")
 
             Rayfield:Notify({
-   Title = "Discord Link Copied",
-   Content = "The discord link was copied to clipboard: https://discord.gg/7WtejdcD",
-   Duration = 1.5,
+   Title = "Discord Link Copied!",
+   Content = "Discord Copied!",
+   Duration = 3,
+   Image = nil,
 })
-end,
+   end,
 })
 
 local ButtonUnloadCheat = SettingsTab:CreateButton({
